@@ -35,13 +35,15 @@ def get_number_of_lines():
 def get_bet(balance, lines):
     # currently doesn't like non-integer bet amounts.
     while True:
-        max_bet_per_line = int((balance / lines)*100)/100
-        print(max_bet_per_line)
-        bet = input(
-            f"Place your bet. You have ${balance} available, and have chosen to bet {lines} lines. Your max bet per line is ${max_bet_per_line}) $")
+        max_bet_per_line = (balance) / lines
+        print(
+            f"You have ${balance} available, and have chosen to bet {lines} lines. Your max bet per line is ${max_bet_per_line}) $")
+        bet = input("Place your bet $")
+#        bet = float(bet)
+        print(bet.isdigit())
         if bet.isdigit():
             net_bet = int(bet) * lines
-            net_max_bet = max_bet_per_line * lines
+            net_max_bet = (max_bet_per_line * lines)
             print(
                 f"You bet ${bet} on {lines} lines for a total bet of ${net_bet}")
             if MIN_BET <= net_bet <= net_max_bet:
@@ -49,7 +51,7 @@ def get_bet(balance, lines):
             else:
                 print(f"You have exceeded your balance")
         else:
-            print("please enter a number greater than 0")
+            print("please enter a number greater than 0.0")
 
     return net_bet
 
