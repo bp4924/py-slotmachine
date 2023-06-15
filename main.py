@@ -23,6 +23,8 @@ symbol_value = {
     "Eggplant": 6
 }
 
+spin_count = 0
+
 
 def check_winnings(columns, lines, bet, values):
     bet = int(bet)
@@ -127,12 +129,12 @@ def get_bet(balance, lines):
     return bet, net_bet
 
 
-def game(balance):
+def game(balance, spin_count):
     lines = get_number_of_lines()
     bet, net_bet = get_bet(balance, lines)
 
     print("")
-    print("Results:")
+    print(f"Spin {spin_count} Results:")
     print("")
 
     slots = get_spin(ROWS, REELS, symbol_count)
@@ -148,9 +150,9 @@ def game(balance):
     return winnings
 
 
-def main():
+def main(spin_count):
     balance = deposit()
-    print(balance)
+    print("")
 
     while True:
         print(f"Current balance is ${balance}")
@@ -165,7 +167,9 @@ def main():
             print(f"Your balance is ${balance}")
             print("Thank you for playing")
             break
-        balance += game(balance)
+        spin_count += 1
+
+        balance += game(balance, spin_count)
 
 
-main()
+main(spin_count)
