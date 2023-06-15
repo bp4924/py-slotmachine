@@ -8,18 +8,18 @@ ROWS = 3
 REELS = 3
 
 symbol_count = {
-    "Gold": 1,
-    "Apple": 2,
-    "Banana": 4,
-    "Cherry": 6,
+    "Gold    ": 1,
+    "Apple   ": 2,
+    "Banana  ": 4,
+    "Cherry  ": 6,
     "Eggplant": 8
 }
 
 symbol_value = {
-    "Gold": 20,
-    "Apple": 9,
-    "Banana": 8,
-    "Cherry": 7,
+    "Gold    ": 20,
+    "Apple   ": 9,
+    "Banana  ": 8,
+    "Cherry  ": 7,
     "Eggplant": 6
 }
 
