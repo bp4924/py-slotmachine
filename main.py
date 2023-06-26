@@ -91,6 +91,7 @@ def deposit():
 
 def get_number_of_lines():
     while True:
+        lines = 0
         lines = input(
             "How many lines do you want to bet (1-" + str(MAX_LINES) + ")? ")
         if lines.isdigit():
@@ -107,9 +108,10 @@ def get_number_of_lines():
 def get_bet(balance, lines):
     # currently doesn't like non-integer bet amounts.
     while True:
-        max_bet_per_line = (balance) / lines
+        max_bet_per_line = int(balance / lines)
+
         print(
-            f"You have ${balance} available, and have chosen to bet {lines} lines. Your max bet per line is ${max_bet_per_line}) $")
+            f"You have ${balance} available, and have chosen to bet {lines} lines. Your max bet per line is ${max_bet_per_line}")
         bet = input("Place your bet $")
 
         if bet.isdigit():
