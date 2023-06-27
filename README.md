@@ -1,6 +1,6 @@
 # py-slotmachine
 
-YouTube totorial from Tech with Tim https://www.youtube.com/watch?v=th4OBktqK1I
+YouTube tutorial from Tech with Tim https://www.youtube.com/watch?v=th4OBktqK1I
 
 This code runs from the command line (CLI) by initiating main.py
 
@@ -8,7 +8,9 @@ Just follow the prompts
 
 ## Challenges
 
-As it stands, the app does not like non-integer bets, though it does suggest them.
+As it stands, the app does not like non-integer bets.
+
+Betting more lines than your balance asks you to change your bet, not your lines. At that point, the only way out is CTL C.
 
 ## Enhancements
 
