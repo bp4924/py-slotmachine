@@ -1,6 +1,7 @@
 import random
 
 MAX_LINES = 3
+MIN_LINES = 1
 MIN_BET = 1
 
 
@@ -89,17 +90,26 @@ def deposit():
     return amount
 
 
-def get_number_of_lines():
+def get_number_of_lines(balance):
     while True:
         lines = 0
+        print(f"initial lines {lines}")
+
         lines = input(
-            "How many lines do you want to bet (1-" + str(MAX_LINES) + ")? ")
+            f"How many lines do you want to bet ( {MIN_LINES} - {MAX_LINES} )? ")
+
         if lines.isdigit():
             lines = int(lines)
-            if 1 <= lines <= MAX_LINES:
+            if lines > balance:
+                print(
+                    f"Based on your balance, you cannot bet more than {balance} lines")
+                lines = 0
+                print(f"reset lines {lines}")
+                get_number_of_lines(balance)
+            elif 1 <= lines <= MAX_LINES:
                 break
             else:
-                print("Please choose a number between 1 and " + str(MAX_LINES))
+                print(f"Please choose a number between 1 and {MAX_LINES}")
         else:
             print("please enter a number")
     return lines
@@ -132,7 +142,7 @@ def get_bet(balance, lines):
 
 
 def game(balance, spin_count):
-    lines = get_number_of_lines()
+    lines = get_number_of_lines(balance)
     bet, net_bet = get_bet(balance, lines)
 
     print("")

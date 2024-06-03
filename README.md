@@ -10,7 +10,7 @@ Just follow the prompts
 
 As it stands, the app does not like non-integer bets.
 
-Betting more lines than your balance asks you to change your bet, not your lines. At that point, the only way out is CTL C.
+Betting more lines than your balance asks you to change your bet, not your lines. At that point, the only way out is CTL C. -- UPDATE - the app now informs you if you choose more lines than your balance. There is still an issue with the recursion in that it doesn't seem to register the new choice the first time, but it will the second.
 
 ## Enhancements
 
