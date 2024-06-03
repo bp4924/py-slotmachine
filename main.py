@@ -93,23 +93,23 @@ def deposit():
 def get_number_of_lines(balance):
     while True:
         lines = 0
-        print(f"initial lines {lines}")
 
         lines = input(
             f"How many lines do you want to bet ( {MIN_LINES} - {MAX_LINES} )? ")
 
         if lines.isdigit():
             lines = int(lines)
+            # check for excessive lines
             if lines > balance:
                 print(
                     f"Based on your balance, you cannot bet more than {balance} lines")
-                lines = 0
-                print(f"reset lines {lines}")
-                get_number_of_lines(balance)
-            elif 1 <= lines <= MAX_LINES:
+
+            elif MIN_LINES <= lines <= MAX_LINES:
                 break
+
             else:
-                print(f"Please choose a number between 1 and {MAX_LINES}")
+                print(
+                    f"Please choose a number between {MIN_LINES} and {MAX_LINES}")
         else:
             print("please enter a number")
     return lines
