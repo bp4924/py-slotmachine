@@ -2,7 +2,7 @@
 
 YouTube tutorial from Tech with Tim https://www.youtube.com/watch?v=th4OBktqK1I
 
-This code runs from the command line (CLI) by initiating main.py
+This code runs from the command line (CLI) by initiating main.py (python main.py)
 
 Just follow the prompts
 
